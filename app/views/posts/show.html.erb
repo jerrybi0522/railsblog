@@ -1,0 +1,30 @@
+<div class="user-post">
+	<h3><%= @post.title %></h3>
+	<%= @post.user.username %><br><br>
+	<%= @post.body %><br><br>
+	<% if current_user == @post.user %>
+		<%= button_to "Edit Post", edit_post_path(@post), method: :get %> <br>
+	<% end %>
+</div>
+
+<div class="form">
+	<% if current_user %>
+		<%= form_for Comment.new do |f| %>
+			<%=f.text_area :body, :cols => 50 %>
+			<%=f.hidden_field :user_id, value: current_user.id %>
+			<%=f.hidden_field :post_id, value: @post.id %><br>
+			<%=f.submit %>
+		<% end %>
+	<% end %>
+</div>
+
+<% if @post.comments %>
+	<div class="comment_container">
+		<% @comments.reverse.each do |comment| %>
+			<%= link_to comment.user.username, user_path(comment.user) %><br><br>
+			<%= comment.body %><br><br>
+			<%= button_to "Delete Comment", comment_path(comment), method: :delete %>
+			<br>
+		<% end %>
+	</div>
+<% end %>

@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+header {
+	text-align: center;
+	color: white;
+}
+
+body {
+	font-family: Sans-Serif;
+	background-color: #000080;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin: 5px;
+	border-style: solid 1px pink;
+	border-radius: 5px;
+	background-color: pink;
+	width: 20%;
+	height: 99%;
+}
+
+ul {
+	list-style: none;
+	padding: 20px 50px;
+}
+
+.container {
+	width: 79%;
+	position: absolute;
+	text-align: center;
+	height: 100%;
+}
+
+.main {
+	border-style: solid 1px #FFFF66;
+	border-radius: 5px;
+	background-color: #FFFF66;
+	padding: 20px;
+	margin-bottom: 6px;
+}
+
+.user-post {
+	border: solid 1px black;
+	padding: 30px;
+	width: 40%;
+	margin: auto;
+	background-color: white;
+}
+
+.form {
+	margin: auto;
+	padding: 20px;
+}
+
+.post_container {
+	padding: 20px;
+}
+
+.comment_container {
+	padding: 20px;
+}

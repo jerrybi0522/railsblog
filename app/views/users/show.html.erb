@@ -1,0 +1,30 @@
+<h1><%= @user.username %></h1>
+<h5><%= @user.fname %> <%= @user.lname %></h5>
+<h5><%= @user.birthday %></h5>
+<h5><%= @user.email %></h5>
+
+<% if current_user == @user %>
+	<%= button_to "Edit User", edit_user_path(@user), method: :get %>
+<% end %>
+
+<div class="form">
+	<% if current_user == @user %>
+		<%= form_for @post do |f| %>
+			<%=f.text_field :title, :maxlength => 50 %><br><br>
+
+			<%=f.text_area :body, :cols => 50, :rows => 10 %><br>
+
+			<%=f.submit %>
+		<% end %>
+	<% end %>
+</div>
+
+<div class="post_container">
+	<% @user.posts.reverse.each do |post| %>
+		<div class="user-post">
+			<h3><%= link_to post.title, post_path(post) %></h3>
+			<%= post.body %><br><br>
+		</div>
+		<br>
+	<% end %>
+</div>

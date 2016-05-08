@@ -1,0 +1,23 @@
+<div class="form">
+	<%= form_for @user do |f| %>
+		<%=f.label :username %><br>
+		<%=f.text_field :username %><br><br>
+
+		<%=f.label :password %><br>
+		<%=f.password_field :password %><br><br>
+
+		<%=f.label :fname %><br>
+		<%=f.text_field :fname %><br><br>
+
+		<%=f.label :lname %><br>
+		<%=f.text_field :lname %><br><br>
+
+		<%=f.label :birthday %><br>
+		<%=f.text_field :birthday %><br><br>
+
+		<%=f.label :email %><br>
+		<%=f.text_field :email %><br><br>
+
+		<%=f.submit %>
+	<% end %>
+</div>

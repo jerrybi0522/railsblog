@@ -1,0 +1,25 @@
+<div class="form">
+	<%= form_for @user do |f| %>
+		<%=f.label :username %><br>
+		<%=f.text_field :username, :value => @user.username %><br><br>
+
+		<%=f.label :password %><br>
+		<%=f.password_field :password, :value => @user.password %><br><br>
+
+		<%=f.label :fname %><br>
+		<%=f.text_field :fname, :value => @user.fname %><br><br>
+
+		<%=f.label :lname %><br>
+		<%=f.text_field :lname, :value => @user.lname %><br><br>
+
+		<%=f.label :birthday %><br>
+		<%=f.text_field :birthday, :value => @user.birthday %><br><br>
+
+		<%=f.label :email %><br>
+		<%=f.text_field :email, :value => @user.email %><br><br>
+
+		<%=f.submit %>
+	<% end %>
+
+	<%= button_to "Delete User", user_path(@user), method: :delete %>
+</div>
